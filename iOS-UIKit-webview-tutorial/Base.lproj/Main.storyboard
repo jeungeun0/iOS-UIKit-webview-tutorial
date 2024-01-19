@@ -1,24 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_UIKit_webview_tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCU-aP-php">
+                                <rect key="frame" x="24" y="359" width="345" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="외부 사파리 웹뷰"/>
+                                <connections>
+                                    <action selector="handleExternalWebviewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7G-bE-KCL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6F-Ow-gOT">
+                                <rect key="frame" x="24" y="424" width="345" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="사파리 뷰컨"/>
+                                <connections>
+                                    <action selector="handleSafariViewControllerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4RF-kE-OJG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR2-Uw-xr6">
+                                <rect key="frame" x="24" y="489" width="345" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="커스텀 웹뷰"/>
+                                <connections>
+                                    <action selector="handleCustomWebviewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F8G-su-kI8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TR2-Uw-xr6" firstAttribute="top" secondItem="T6F-Ow-gOT" secondAttribute="bottom" constant="24" id="2w9-5a-Bdh"/>
+                            <constraint firstItem="tCU-aP-php" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="4Fl-6V-XLW"/>
+                            <constraint firstItem="T6F-Ow-gOT" firstAttribute="top" secondItem="tCU-aP-php" secondAttribute="bottom" constant="24" id="DA4-Iu-LgG"/>
+                            <constraint firstItem="tCU-aP-php" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mae-tC-K5Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T6F-Ow-gOT" secondAttribute="trailing" constant="24" id="OIw-oY-3Be"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TR2-Uw-xr6" secondAttribute="trailing" constant="24" id="S54-sl-NQn"/>
+                            <constraint firstItem="T6F-Ow-gOT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="TyM-51-hJ7"/>
+                            <constraint firstItem="tCU-aP-php" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="dfX-Rx-AwI"/>
+                            <constraint firstItem="T6F-Ow-gOT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mJO-Sa-wDJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tCU-aP-php" secondAttribute="trailing" constant="24" id="n1C-Zc-Kuo"/>
+                            <constraint firstItem="TR2-Uw-xr6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="r8d-Fd-dCD"/>
+                            <constraint firstItem="TR2-Uw-xr6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zAh-ep-cWu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="76" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
